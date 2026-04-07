@@ -9,6 +9,7 @@ import ChannelsPage from "../../pages/Control/Channels";
 import SessionsPage from "../../pages/Control/Sessions";
 import CronJobsPage from "../../pages/Control/CronJobs";
 import HeartbeatPage from "../../pages/Control/Heartbeat";
+import MeetingsPage from "../../pages/Control/Meetings";
 import AgentConfigPage from "../../pages/Agent/Config";
 import SkillsPage from "../../pages/Agent/Skills";
 import SkillPoolPage from "../../pages/Agent/SkillPool";
@@ -21,6 +22,7 @@ import SecurityPage from "../../pages/Settings/Security";
 import TokenUsagePage from "../../pages/Settings/TokenUsage";
 import VoiceTranscriptionPage from "../../pages/Settings/VoiceTranscription";
 import AgentsPage from "../../pages/Settings/Agents";
+import AgentSACPPage from "../../pages/Control/AgentSACPs";
 
 const { Content } = Layout;
 
@@ -30,6 +32,7 @@ const pathToKey: Record<string, string> = {
   "/sessions": "sessions",
   "/cron-jobs": "cron-jobs",
   "/heartbeat": "heartbeat",
+  "/meetings": "meetings",
   "/skills": "skills",
   "/skill-pool": "skill-pool",
   "/tools": "tools",
@@ -42,6 +45,7 @@ const pathToKey: Record<string, string> = {
   "/security": "security",
   "/token-usage": "token-usage",
   "/voice-transcription": "voice-transcription",
+  "/sacp-agents": "sacp-agents",
 };
 
 export default function MainLayout() {
@@ -64,6 +68,7 @@ export default function MainLayout() {
               <Route path="/sessions" element={<SessionsPage />} />
               <Route path="/cron-jobs" element={<CronJobsPage />} />
               <Route path="/heartbeat" element={<HeartbeatPage />} />
+              <Route path="/meetings" element={<MeetingsPage />} />
               <Route path="/skills" element={<SkillsPage />} />
               <Route path="/skill-pool" element={<SkillPoolPage />} />
               <Route path="/tools" element={<ToolsPage />} />
@@ -79,6 +84,7 @@ export default function MainLayout() {
                 path="/voice-transcription"
                 element={<VoiceTranscriptionPage />}
               />
+              <Route path="/sacp-agents" element={<AgentSACPPage />} />
             </Routes>
           </div>
         </Content>

@@ -186,6 +186,12 @@ class XiaoYiConfig(BaseChannelConfig):
     task_timeout_ms: int = 3600000  # 1 hour task timeout
 
 
+class SACPChannelConfig(BaseChannelConfig):
+    """SACP channel config for communication between agents."""
+
+    sensitive_md: str = ""
+
+
 class WeixinConfig(BaseChannelConfig):
     """WeChat (iLink Bot) personal account channel config.
 
@@ -222,6 +228,7 @@ class ChannelConfig(BaseModel):
     xiaoyi: XiaoYiConfig = XiaoYiConfig()
     weixin: WeixinConfig = WeixinConfig()
     onebot: OneBotConfig = OneBotConfig()
+    sacp: SACPChannelConfig = SACPChannelConfig()
 
 
 class LastApiConfig(BaseModel):

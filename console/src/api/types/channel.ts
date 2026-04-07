@@ -111,6 +111,11 @@ export interface XiaoYiConfig extends BaseChannelConfig {
   task_timeout_ms?: number;
 }
 
+export interface SACPChannelConfig extends Omit<BaseChannelConfig, 'bot_prefix'> {
+  bot_prefix?: string;
+  sensitive_md?: string;
+}
+
 export interface ChannelConfig {
   imessage: IMessageChannelConfig;
   discord: DiscordConfig;
@@ -125,6 +130,7 @@ export interface ChannelConfig {
   console: ConsoleConfig;
   voice: VoiceChannelConfig;
   xiaoyi: XiaoYiConfig;
+  sacp: SACPChannelConfig;
 }
 
 export type SingleChannelConfig =
@@ -140,4 +146,5 @@ export type SingleChannelConfig =
   | MattermostConfig
   | WecomConfig
   | VoiceChannelConfig
-  | XiaoYiConfig;
+  | XiaoYiConfig
+  | SACPChannelConfig;
